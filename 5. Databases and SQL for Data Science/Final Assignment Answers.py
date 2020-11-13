@@ -19,6 +19,8 @@
 #Q6. Problem 6: List the schools in Community Areas 10 to 15 that are healthy school certified?
 
 #Q7. What is the average school Safety Score?
+%sql select AVG("Safety_Score") as avg_safety_score from CHICAGO_SCHOOLS
+#49.504873
 
 #Q8. List the top 5 Community Areas by average College Enrollments (number of students)
 
