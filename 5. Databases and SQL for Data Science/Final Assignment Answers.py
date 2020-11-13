@@ -23,7 +23,16 @@
 #49.504873
 
 #Q8. List the top 5 Community Areas by average College Enrollments (number of students)
+%%sql
+select 'COMMUNITY_AREA_NAME', avg('College_Enrollment_number_of_students') AS AVERAGE_COLLEGE_ENROLLMENT
+from chicago_schools 
+group by 'COMMUNITY_AREA_NAME'
+order by AVERAGE_COLLEGE_ENROLLMENT DESC
+LIMIT 5
 
 #PQ9. Use a sub-query to determine which Community Area has the least value for Safety Score?
+%%sql
+select 'community_area_name' from chicago_schools
+where 'SAFETY_SCORE' = (select min('SAFETY_SCORE') from chicago_schools)
 
 #Q10. Find the Per Capita Income of the Community Area which has a school Safety Score of 1.
